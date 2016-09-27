@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>abnf</string>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~A</string>
+	<key>name</key>
+	<string>ABNF</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#comment</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>comment</key>
+		<dict>
+			<key>begin</key>
+			<string>;</string>
+			<key>comment</key>
+			<string>A line comment starts with a `;` sign and continues to the 
+                 end of the line.</string>
+			<key>end</key>
+			<string>\Z</string>
+			<key>name</key>
+			<string>comment.line.semicolon.abnf</string>
+		</dict>
+	</dict>
+	<key>scopeName</key>
+	<string>source.abnf</string>
+	<key>uuid</key>
+	<string>7E104F42-A7B3-47CE-AE6E-D55E62C4D5E0</string>
+</dict>
+</plist>
