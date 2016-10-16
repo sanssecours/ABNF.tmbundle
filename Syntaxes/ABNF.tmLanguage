@@ -22,12 +22,42 @@
 		<key>comment</key>
 		<dict>
 			<key>begin</key>
+			<string>(?:(?&lt;leading-whitespace&gt;^[ \t]*)|[ \t]+)(?=;\p{Print}*$)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>leading-whitespace</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.leading.abnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#comment-line</string>
+				</dict>
+			</array>
+		</dict>
+		<key>comment-line</key>
+		<dict>
+			<key>begin</key>
 			<string>;</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.abnf</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>A line comment starts with a `;` sign and continues to the 
                  end of the line.</string>
 			<key>end</key>
-			<string>\Z</string>
+			<string>\n</string>
 			<key>name</key>
 			<string>comment.line.semicolon.abnf</string>
 		</dict>
