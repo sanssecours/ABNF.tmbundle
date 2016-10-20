@@ -65,6 +65,15 @@
 			<key>name</key>
 			<string>comment.line.semicolon.abnf</string>
 		</dict>
+		<key>double-quoted-string</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double.abnf</string>
+		</dict>
 		<key>rule</key>
 		<dict>
 			<key>begin</key>
@@ -83,6 +92,10 @@
 						<dict>
 							<key>include</key>
 							<string>#comment</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#double-quoted-string</string>
 						</dict>
 					</array>
 				</dict>
