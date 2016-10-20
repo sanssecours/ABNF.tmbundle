@@ -1,0 +1,13 @@
+; Comments start with a single semicolon
+
+; An ABNF rule can contain multiple sub-rules
+rule = subrule1 subrule2 subrule3
+
+; We can also use optional angle brackets around a rule name
+
+<brackets> = "[]"
+
+; -- Invalid Rules -------------------------------------------------------------
+
+<missing-angle-bracket  = "Missing `>`"
+illegal$characters_     = "Rule names can only contains certain characters"
