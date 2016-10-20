@@ -7,7 +7,7 @@
 	<key>contactName</key>
 	<string>René Schwaiger</string>
 	<key>description</key>
-	<string></string>
+	<string>Support for the grammar definition language &lt;a href="http://www.wikiwand.com/en/Augmented_Backus–Naur_Form"&gt;ABNF&lt;/a&gt;.</string>
 	<key>name</key>
 	<string>ABNF</string>
 	<key>uuid</key>
