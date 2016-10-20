@@ -74,6 +74,20 @@
 			<key>name</key>
 			<string>string.quoted.double.abnf</string>
 		</dict>
+		<key>equal</key>
+		<dict>
+			<key>match</key>
+			<string>=(?!/)</string>
+			<key>name</key>
+			<string>keyword.operator.equal.abnf</string>
+		</dict>
+		<key>equal-alternative</key>
+		<dict>
+			<key>match</key>
+			<string>=/</string>
+			<key>name</key>
+			<string>keyword.operator.equal-alternative.abnf</string>
+		</dict>
 		<key>rule</key>
 		<dict>
 			<key>begin</key>
@@ -91,11 +105,23 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#equal</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#equal-alternative</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#comment</string>
 						</dict>
 						<dict>
 							<key>include</key>
 							<string>#double-quoted-string</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#rule-name</string>
 						</dict>
 					</array>
 				</dict>
