@@ -4,8 +4,9 @@
 rule = subrule1 subrule2 subrule3
 
 ; We can also use optional angle brackets around a rule name
+<oh-look-ma-angle-brackets> = "[]"; We can use double quotes to specify a
+                                  ; sequence of characters
 
-<brackets> = "[]"
 ; We can specify character directly by using their ASCII/Unicode value
 CR = %d13
 CR = %x0D
