@@ -12,6 +12,12 @@ CR = %d13
 CR = %x0D
 space = %b100000
 
+; We can combine characters using the concatenation operator `.`
+ABNF = %d65.66.78.70
+ABNF = %d65 %d66 %d78 %d70 ; equal to the rule above
+hex = %xa.b
+binary = %b100000.10
+
 ; -- Invalid Rules -------------------------------------------------------------
 
 <missing-angle-bracket  = "Missing `>`"

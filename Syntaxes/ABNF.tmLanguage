@@ -85,22 +85,46 @@
 		</dict>
 		<key>constant-binary</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>%b[01]+</string>
+			<string>%b[01]+(?:(\.)[01]+)*</string>
 			<key>name</key>
 			<string>constant.numeric.binary.abnf</string>
 		</dict>
 		<key>constant-decimal</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>%d\d+</string>
+			<string>%d\d+(?:(\.)\d+)*</string>
 			<key>name</key>
 			<string>constant.numeric.decimal.abnf</string>
 		</dict>
 		<key>constant-hex</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>%x\h+</string>
+			<string>%x\h+(?:(\.)\h+)*</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
 		</dict>
