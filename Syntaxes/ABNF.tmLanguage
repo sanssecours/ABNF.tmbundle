@@ -16,6 +16,10 @@
 			<key>include</key>
 			<string>#comment</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#rule</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -60,6 +64,109 @@
 			<string>\n</string>
 			<key>name</key>
 			<string>comment.line.semicolon.abnf</string>
+		</dict>
+		<key>rule</key>
+		<dict>
+			<key>begin</key>
+			<string>(?x)^(\s*)
+                 # We match the name of the rule and a single whitespace 
+                 # character. We use the additional whitespace to catch a 
+                 # missing closing angle bracket.
+                 (?&lt;name&gt;\S+\s)           
+                 (?&lt;elements&gt;.*)</string>
+			<key>captures</key>
+			<dict>
+				<key>elements</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#comment</string>
+						</dict>
+					</array>
+				</dict>
+				<key>name</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#rule-name-angle-brackets</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#rule-name</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>A rule start with a possibly empty sequence of whitespace. The 
+                 rule continues if the next line starts with at least one more
+                 whitespace character than the initial line of the rule.</string>
+			<key>name</key>
+			<string>meta.rule</string>
+			<key>while</key>
+			<string>^(?=\1\s)(?&lt;elements&gt;.*)</string>
+		</dict>
+		<key>rule-name</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>invalid</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.character.abnf</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>The name of a rule is a sequence of characters, beginning 
+                 with an alphabetic character, and followed by a combination of 
+                 alphabetic characters, digits, and hyphens (dashes)</string>
+			<key>match</key>
+			<string>[a-zA-Z][a-zA-Z0-9\-]*|(?&lt;invalid&gt;\S)|s*</string>
+			<key>name</key>
+			<string>variable.other.rule.abnf</string>
+		</dict>
+		<key>rule-name-angle-brackets</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.angle-bracket.abnf</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Angle brackets may be used around a rule name.</string>
+			<key>end</key>
+			<string>&gt;|(\s)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.angle-bracket.abnf</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.missing.angle-bracket.abnf</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>variable.other.rule</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-name</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
