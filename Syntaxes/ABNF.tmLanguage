@@ -78,10 +78,10 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)^(\s*)
-                 # We match the name of the rule and a single whitespace 
-                 # character. We use the additional whitespace to catch a 
+                 # We match the name of the rule and all following whitespace 
+                 # characters. We use the additional whitespace to catch a 
                  # missing closing angle bracket.
-                 (?&lt;name&gt;\S+\s)           
+                 (?&lt;name&gt;\S+\s+)           
                  (?&lt;elements&gt;.*)</string>
 			<key>captures</key>
 			<dict>
