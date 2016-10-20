@@ -65,23 +65,14 @@
 			<key>name</key>
 			<string>comment.line.semicolon.abnf</string>
 		</dict>
-		<key>double-quoted-string</key>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double.abnf</string>
-		</dict>
-		<key>equal</key>
+		<key>operator-equal</key>
 		<dict>
 			<key>match</key>
 			<string>=(?!/)</string>
 			<key>name</key>
 			<string>keyword.operator.equal.abnf</string>
 		</dict>
-		<key>equal-alternative</key>
+		<key>operator-equal-alternative</key>
 		<dict>
 			<key>match</key>
 			<string>=/</string>
@@ -105,11 +96,11 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#equal</string>
+							<string>#operator-equal</string>
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#equal-alternative</string>
+							<string>#operator-equal-alternative</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -117,7 +108,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#double-quoted-string</string>
+							<string>#string-double-quoted</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -206,6 +197,15 @@
 					<string>#rule-name</string>
 				</dict>
 			</array>
+		</dict>
+		<key>string-double-quoted</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double.abnf</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
