@@ -65,6 +65,45 @@
 			<key>name</key>
 			<string>comment.line.semicolon.abnf</string>
 		</dict>
+		<key>constant</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#constant-decimal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant-hex</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant-binary</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constant-binary</key>
+		<dict>
+			<key>match</key>
+			<string>%b[01]+</string>
+			<key>name</key>
+			<string>constant.numeric.binary.abnf</string>
+		</dict>
+		<key>constant-decimal</key>
+		<dict>
+			<key>match</key>
+			<string>%d\d+</string>
+			<key>name</key>
+			<string>constant.numeric.decimal.abnf</string>
+		</dict>
+		<key>constant-hex</key>
+		<dict>
+			<key>match</key>
+			<string>%x\h+</string>
+			<key>name</key>
+			<string>constant.numeric.hex.abnf</string>
+		</dict>
 		<key>operator</key>
 		<dict>
 			<key>patterns</key>
@@ -115,6 +154,10 @@
 						<dict>
 							<key>include</key>
 							<string>#comment</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constant</string>
 						</dict>
 						<dict>
 							<key>include</key>

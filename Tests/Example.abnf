@@ -6,6 +6,10 @@ rule = subrule1 subrule2 subrule3
 ; We can also use optional angle brackets around a rule name
 
 <brackets> = "[]"
+; We can specify character directly by using their ASCII/Unicode value
+CR = %d13
+CR = %x0D
+space = %b100000
 
 ; -- Invalid Rules -------------------------------------------------------------
 
