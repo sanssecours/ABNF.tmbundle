@@ -87,14 +87,33 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>number</key>
 				<dict>
-					<key>name</key>
-					<string>keyword.operator.concatenation.abnf</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-binary</string>
+						</dict>
+					</array>
+				</dict>
+				<key>numbers-concat</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digits-binary-concatenation</string>
+						</dict>
+					</array>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>%b[01]+(?:(\.)[01]+)*</string>
+			<string>(?x)%b
+                # First number
+                (?&lt;number&gt;[^\s.]+)        
+                # Optional sequence of additional numbers separated by dot
+                (?&lt;numbers-concat&gt;\S+)?</string>
 			<key>name</key>
 			<string>constant.numeric.binary.abnf</string>
 		</dict>
@@ -127,6 +146,55 @@
 			<string>%x\h+(?:(\.)\h+)*</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
+		</dict>
+		<key>digit-binary</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#digit-binary-valid</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#digit-binary-invalid</string>
+				</dict>
+			</array>
+		</dict>
+		<key>digit-binary-invalid</key>
+		<dict>
+			<key>match</key>
+			<string>\S</string>
+			<key>name</key>
+			<string>invalid.illegal.digit.binary.abnf</string>
+		</dict>
+		<key>digit-binary-valid</key>
+		<dict>
+			<key>match</key>
+			<string>[01]</string>
+		</dict>
+		<key>digits-binary-concatenation</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>dot</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+				<key>number</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-binary</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;dot&gt;\.)(?&lt;number&gt;[^\s.]+)</string>
 		</dict>
 		<key>operator</key>
 		<dict>
