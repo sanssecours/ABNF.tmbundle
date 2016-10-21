@@ -23,4 +23,6 @@ binary = %b100000.10
 <missing-angle-bracket  = "Missing `>`"
 illegal$characters_     = "Rule names can only contains certain characters"
 
-incorrect-binary-digits = %b3h012901.012xf.56
+incorrect-binary-digits  = %b3h012901.012xf.56
+incorrect-decimal-digits = %d3h012901.012xf.56
+incorrect-hex-digits     = %x3h012901.012xf.56

@@ -121,14 +121,29 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>number</key>
 				<dict>
-					<key>name</key>
-					<string>keyword.operator.concatenation.abnf</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-decimal</string>
+						</dict>
+					</array>
+				</dict>
+				<key>numbers-concat</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digits-decimal-concatenation</string>
+						</dict>
+					</array>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>%d\d+(?:(\.)\d+)*</string>
+			<string>%d(?&lt;number&gt;[^\s.]+)(?&lt;numbers-concat&gt;\S+)?</string>
 			<key>name</key>
 			<string>constant.numeric.decimal.abnf</string>
 		</dict>
@@ -136,14 +151,29 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>number</key>
 				<dict>
-					<key>name</key>
-					<string>keyword.operator.concatenation.abnf</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-hex</string>
+						</dict>
+					</array>
+				</dict>
+				<key>numbers-concat</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digits-hex-concatenation</string>
+						</dict>
+					</array>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>%x\h+(?:(\.)\h+)*</string>
+			<string>%x(?&lt;number&gt;[^\s.]+)(?&lt;numbers-concat&gt;\S+)?</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
 		</dict>
@@ -173,6 +203,58 @@
 			<key>match</key>
 			<string>[01]</string>
 		</dict>
+		<key>digit-decimal</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#digit-decimal-valid</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#digit-decimal-invalid</string>
+				</dict>
+			</array>
+		</dict>
+		<key>digit-decimal-invalid</key>
+		<dict>
+			<key>match</key>
+			<string>\S</string>
+			<key>name</key>
+			<string>invalid.illegal.digit.decimal.abnf</string>
+		</dict>
+		<key>digit-decimal-valid</key>
+		<dict>
+			<key>match</key>
+			<string>\d</string>
+		</dict>
+		<key>digit-hex</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#digit-hex-valid</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#digit-hex-invalid</string>
+				</dict>
+			</array>
+		</dict>
+		<key>digit-hex-invalid</key>
+		<dict>
+			<key>match</key>
+			<string>\S</string>
+			<key>name</key>
+			<string>invalid.illegal.digit.hex.abnf</string>
+		</dict>
+		<key>digit-hex-valid</key>
+		<dict>
+			<key>match</key>
+			<string>\h</string>
+		</dict>
 		<key>digits-binary-concatenation</key>
 		<dict>
 			<key>captures</key>
@@ -189,6 +271,52 @@
 						<dict>
 							<key>include</key>
 							<string>#digit-binary</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;dot&gt;\.)(?&lt;number&gt;[^\s.]+)</string>
+		</dict>
+		<key>digits-decimal-concatenation</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>dot</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+				<key>number</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-decimal</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;dot&gt;\.)(?&lt;number&gt;[^\s.]+)</string>
+		</dict>
+		<key>digits-hex-concatenation</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>dot</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.concatenation.abnf</string>
+				</dict>
+				<key>number</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-hex</string>
 						</dict>
 					</array>
 				</dict>
