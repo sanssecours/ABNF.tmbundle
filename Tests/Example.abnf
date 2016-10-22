@@ -19,11 +19,9 @@ hex = %xa.b
 binary = %b100000.10
 
 ; We separate alternatives by a forward slash
-
 rule = alternative1 / alternative2 / "Alternative"
 
 ; We specify incremental alternative via `=/`
-
 rule = alternative1
 rule /= alternative2 / "Alternative"
 
