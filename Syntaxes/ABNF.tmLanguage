@@ -336,7 +336,18 @@
 					<key>include</key>
 					<string>#operator-equal-alternative</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator-alternative</string>
+				</dict>
 			</array>
+		</dict>
+		<key>operator-alternative</key>
+		<dict>
+			<key>match</key>
+			<string>/</string>
+			<key>name</key>
+			<string>keyword.operator.alternative.abnf</string>
 		</dict>
 		<key>operator-equal</key>
 		<dict>
