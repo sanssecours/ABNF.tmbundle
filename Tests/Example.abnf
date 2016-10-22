@@ -27,11 +27,21 @@ rule = alternative1 / alternative2 / "Alternative"
 rule = alternative1
 rule /= alternative2 / "Alternative"
 
+; We can specify a range of values using a dash sign
+binary-range  = %b00-11
+decimal-range = %d30-39
+hex-range     = %x30-af
+
 ; -- Invalid Rules -------------------------------------------------------------
 
 <missing-angle-bracket  = "Missing `>`"
 illegal$characters_     = "Rule names can only contains certain characters"
 
 incorrect-binary-digits  = %b3h012901.012xf.56
+  %b0123456789abcdefg-0123456789abcdefg
+
 incorrect-decimal-digits = %d3h012901.012xf.56
+  %d0123456789abcdefg-0123456789abcdefg
+
 incorrect-hex-digits     = %x3h012901.012xf.56
+  %x0123456789abcdefg-0123456789abcdefg

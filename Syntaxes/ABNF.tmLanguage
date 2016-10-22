@@ -87,6 +87,21 @@
 		<dict>
 			<key>captures</key>
 			<dict>
+				<key>dash</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.range.abnf</string>
+				</dict>
+				<key>last</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-binary</string>
+						</dict>
+					</array>
+				</dict>
 				<key>number</key>
 				<dict>
 					<key>patterns</key>
@@ -111,9 +126,12 @@
 			<key>match</key>
 			<string>(?x)%b
                 # First number
-                (?&lt;number&gt;[^\s.]+)        
-                # Optional sequence of additional numbers separated by dot
-                (?&lt;numbers-concat&gt;\S+)?</string>
+                (?&lt;number&gt;[^\s.-]+)        
+                # Optional 
+                #   - dash followed by last number of range, or
+                #   - sequence of additional numbers separated by dot
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
+                   (?&lt;numbers-concat&gt;\S+))?</string>
 			<key>name</key>
 			<string>constant.numeric.binary.abnf</string>
 		</dict>
@@ -121,6 +139,21 @@
 		<dict>
 			<key>captures</key>
 			<dict>
+				<key>dash</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.range.abnf</string>
+				</dict>
+				<key>last</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-decimal</string>
+						</dict>
+					</array>
+				</dict>
 				<key>number</key>
 				<dict>
 					<key>patterns</key>
@@ -143,7 +176,10 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>%d(?&lt;number&gt;[^\s.]+)(?&lt;numbers-concat&gt;\S+)?</string>
+			<string>(?x)%d
+                (?&lt;number&gt;[^\s.-]+)
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
+                   (?&lt;numbers-concat&gt;\S+))?</string>
 			<key>name</key>
 			<string>constant.numeric.decimal.abnf</string>
 		</dict>
@@ -151,6 +187,21 @@
 		<dict>
 			<key>captures</key>
 			<dict>
+				<key>dash</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.range.abnf</string>
+				</dict>
+				<key>last</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#digit-hex</string>
+						</dict>
+					</array>
+				</dict>
 				<key>number</key>
 				<dict>
 					<key>patterns</key>
@@ -173,7 +224,10 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>%x(?&lt;number&gt;[^\s.]+)(?&lt;numbers-concat&gt;\S+)?</string>
+			<string>(?x)%x
+                (?&lt;number&gt;[^\s.-]+)
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
+                   (?&lt;numbers-concat&gt;\S+))?</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
 		</dict>
