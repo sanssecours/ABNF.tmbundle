@@ -458,7 +458,7 @@
                  rule continues if the next line starts with at least one more
                  whitespace character than the initial line of the rule.</string>
 			<key>name</key>
-			<string>meta.rule</string>
+			<string>meta.rule.abnf</string>
 			<key>while</key>
 			<string>^(?=\1\s)(?&lt;elements&gt;.*)</string>
 		</dict>
