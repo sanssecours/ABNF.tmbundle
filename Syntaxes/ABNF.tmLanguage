@@ -434,23 +434,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#operator</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#comment</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#constant</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#string-double-quoted</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#rule-name</string>
+							<string>#rule-right-side</string>
 						</dict>
 					</array>
 				</dict>
@@ -530,6 +514,32 @@
 			<string>variable.other.rule</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-name</string>
+				</dict>
+			</array>
+		</dict>
+		<key>rule-right-side</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-double-quoted</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#rule-name</string>
