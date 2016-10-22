@@ -30,6 +30,9 @@ binary-range  = %b00-11
 decimal-range = %d30-39
 hex-range     = %x30-af
 
+; We group rules using parentheses
+grouped = (turbo / staat) husum
+
 ; -- Invalid Rules -------------------------------------------------------------
 
 <missing-angle-bracket  = "Missing `>`"

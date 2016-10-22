@@ -462,6 +462,30 @@
 			<key>while</key>
 			<string>^(?=\1\s)(?&lt;elements&gt;.*)</string>
 		</dict>
+		<key>rule-group</key>
+		<dict>
+			<key>begin</key>
+			<string>\(</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.group.abnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string>meta.rule.group.abnf</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-right-side</string>
+				</dict>
+			</array>
+		</dict>
 		<key>rule-name</key>
 		<dict>
 			<key>captures</key>
@@ -524,6 +548,10 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-group</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#operator</string>
