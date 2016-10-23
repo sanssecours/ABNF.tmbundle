@@ -23,7 +23,7 @@ rule = alternative1 / alternative2 / "Alternative"
 
 ; We specify incremental alternative via `=/`
 rule = alternative1
-rule /= alternative2 / "Alternative"
+rule =/ alternative2 / "Alternative"
 
 ; We can specify a range of values using a dash sign
 binary-range  = %b00-11
