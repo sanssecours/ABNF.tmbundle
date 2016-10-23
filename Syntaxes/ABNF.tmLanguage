@@ -424,20 +424,9 @@
                  # We match the name of the rule and all following whitespace 
                  # characters. We use the additional whitespace to catch a 
                  # missing closing angle bracket.
-                 (?&lt;name&gt;\S+\s+)           
-                 (?&lt;elements&gt;.*)</string>
+                 (?&lt;name&gt;\S+\s+)</string>
 			<key>captures</key>
 			<dict>
-				<key>elements</key>
-				<dict>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#rule-right-side</string>
-						</dict>
-					</array>
-				</dict>
 				<key>name</key>
 				<dict>
 					<key>patterns</key>
@@ -459,8 +448,15 @@
                  whitespace character than the initial line of the rule.</string>
 			<key>name</key>
 			<string>meta.rule.abnf</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-right-side</string>
+				</dict>
+			</array>
 			<key>while</key>
-			<string>^(?=\1\s)(?&lt;elements&gt;.*)</string>
+			<string>^(?=\1\s)</string>
 		</dict>
 		<key>rule-group</key>
 		<dict>

@@ -31,7 +31,10 @@ decimal-range = %d30-39
 hex-range     = %x30-af
 
 ; We group rules using parentheses
-grouped = (turbo / staat) husum
+grouped = ( Turbo               /
+            Staat               /
+            (American Football)
+          ) Husum
 
 ; -- Invalid Rules -------------------------------------------------------------
 
