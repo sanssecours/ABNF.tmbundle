@@ -36,7 +36,7 @@ grouped = (turbo / staat) husum
 ; -- Invalid Rules -------------------------------------------------------------
 
 <missing-angle-bracket  = "Missing `>`"
-illegal$characters_     = "Rule names can only contains certain characters"
+illegal$characters_     = "Rule names can only contain certain characters"
 
 incorrect-binary-digits  = %b3h012901.012xf.56
   %b0123456789abcdefg-0123456789abcdefg
