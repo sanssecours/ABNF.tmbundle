@@ -22,8 +22,7 @@ space = %b100000
 
 ; We can combine characters using the concatenation operator `.`.
 ABNF = %d65.66.78.70
-; This rule describes the exact same sequence of the characters as the rule
-; above.
+; This rule describes the exact same sequence of characters as the rule above.
 ABNF = %d65 %d66 %d78 %d70
 hex = %xa.b
 binary = %b100000.10
