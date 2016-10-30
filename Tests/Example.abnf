@@ -1,4 +1,4 @@
-; Comments start with a single semicolon
+; In ABNF comments start with a single semicolon.
 
 ; An ABNF rule can contain multiple sub-rules.
 rule = subrule1 subrule2 subrule3
@@ -33,11 +33,10 @@ binary-range  = %b00-11
 decimal-range = %d30-39
 hex-range     = %x30-af
 
-; We group rules using parentheses
-grouped = ( Turbo               /
-            Staat               /
-            (American Football)
-          ) Husum
+; We group rules using parentheses.
+grouped = (         Turbo         /
+                    Staat         /
+            ([American] Football) ) Husum
 
 ; To repeat rules we use the form <min>*<max>element or <number>element, where
 ;
