@@ -378,24 +378,6 @@
 			<key>match</key>
 			<string>(?&lt;dot&gt;\.)(?&lt;number&gt;[^\s.]+)</string>
 		</dict>
-		<key>operator</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#operator-equal</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#operator-equal-alternative</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#operator-alternative</string>
-				</dict>
-			</array>
-		</dict>
 		<key>operator-alternative</key>
 		<dict>
 			<key>match</key>
@@ -403,10 +385,24 @@
 			<key>name</key>
 			<string>keyword.operator.alternative.abnf</string>
 		</dict>
+		<key>operator-definition</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator-equal-alternative</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator-equal</string>
+				</dict>
+			</array>
+		</dict>
 		<key>operator-equal</key>
 		<dict>
 			<key>match</key>
-			<string>=(?!/)</string>
+			<string>=</string>
 			<key>name</key>
 			<string>keyword.operator.equal.abnf</string>
 		</dict>
@@ -424,7 +420,10 @@
                  # We match the name of the rule and all following whitespace 
                  # characters. We use the additional whitespace to catch a 
                  # missing closing angle bracket.
-                 (?&lt;name&gt;\S+\s+)</string>
+                 (?&lt;name&gt;\S+\s+)
+                 # The definition operator follows after the rule name.
+                 (?&lt;operator&gt;\S+)
+                 </string>
 			<key>captures</key>
 			<dict>
 				<key>name</key>
@@ -436,6 +435,22 @@
 						<dict>
 							<key>include</key>
 							<string>#rule-name</string>
+						</dict>
+					</array>
+				</dict>
+				<key>operator</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#operator-definition</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\S+</string>
+							<key>name</key>
+							<string>invalid.illegal.operator.abnf</string>
 						</dict>
 					</array>
 				</dict>
@@ -594,7 +609,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#operator</string>
+					<string>#operator-alternative</string>
 				</dict>
 				<dict>
 					<key>include</key>

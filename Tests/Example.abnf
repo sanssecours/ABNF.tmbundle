@@ -69,3 +69,7 @@ incorrect-hex-digits     = %x3h012901.012xf.56
   %x0123456789abcdefg-0123456789abcdefg
 
 variable-repetition-without-element = 12 twelve 1*2 three
+
+wrong-definition-operator /= "`=` or `=/` would be correct"
+
+definition-in-right-side = "Uh" = "Huh" /= "Her"
