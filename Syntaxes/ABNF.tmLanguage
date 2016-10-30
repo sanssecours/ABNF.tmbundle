@@ -643,8 +643,22 @@
 					<string>keyword.operator.repetition.abnf</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Variable repetition uses the syntax
+
+                  - &lt;min&gt;*&lt;max&gt;element or
+                  - &lt;repetition&gt;element
+
+                 , where element is an ABNF element such as a group or a
+                 (sub)rule. the parts in angle brackets specify a decimal
+                 number. Both &lt;min&gt; and &lt;max&gt; are optional.</string>
 			<key>match</key>
-			<string>(?&lt;min&gt;\d+)?(?&lt;repetition&gt;\*)?(?&lt;max&gt;\d+)(?=[a-zA-Z("])</string>
+			<string>(?x)
+               # Repetition
+               (?:(?&lt;min&gt;\d*)(?&lt;repetition&gt;\*)(?&lt;max&gt;\d*) |
+                  (?&lt;max&gt;\d+))
+               # Followed by ABNF element
+               (?=[a-zA-Z("])</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
