@@ -540,6 +540,30 @@
 				</dict>
 			</array>
 		</dict>
+		<key>rule-optional</key>
+		<dict>
+			<key>begin</key>
+			<string>\[</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.optional.abnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\]</string>
+			<key>name</key>
+			<string>meta.rule.optional.abnf</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule-right-side</string>
+				</dict>
+			</array>
+		</dict>
 		<key>rule-right-side</key>
 		<dict>
 			<key>patterns</key>
@@ -547,6 +571,10 @@
 				<dict>
 					<key>include</key>
 					<string>#rule-group</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#rule-optional</string>
 				</dict>
 				<dict>
 					<key>include</key>

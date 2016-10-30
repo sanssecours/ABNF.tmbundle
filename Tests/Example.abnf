@@ -49,6 +49,10 @@ year = 12(month)
 month = 28*31days / 2419200*2678400second / 1month
 zero-or-one-day = *1day
 
+; We can use square brackets to make rules optional.
+zero-or-one-day = [day]
+float = [digits ["."[digits]]]
+
 ; -- Invalid Rules -------------------------------------------------------------
 
 <missing-angle-bracket  = "Missing `>`"
