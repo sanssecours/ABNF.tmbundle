@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Folding</string>
+	<key>scope</key>
+	<string>source.abnf meta.rule.abnf</string>
+	<key>settings</key>
+	<dict>
+		<key>foldingIndentedBlockIgnore</key>
+		<string>(?x)
+  # Ignore lines that do not start with a new rule definition.
+  ^(?![^=;]+=)</string>
+		<key>foldingIndentedBlockStart</key>
+		<string>(?x)
+  # Match rule definitions
+  ^[^=]+=</string>
+	</dict>
+	<key>uuid</key>
+	<string>D0779332-1B11-4ED5-A28E-78B4FB541210</string>
+</dict>
+</plist>

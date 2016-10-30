@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List</string>
+	<key>scope</key>
+	<string>source.abnf entity.name.function</string>
+	<key>settings</key>
+	<dict>
+		<key>symbolTransformation</key>
+		<string>
+    # Remove trailing whitespace
+    s/\s+$//
+    # Remove optional angle brackets from rule name
+    s/^&lt;|&gt;$\s*//g;
+  </string>
+	</dict>
+	<key>uuid</key>
+	<string>C2467717-FCBD-4FFD-AB4C-C2EBAD924ED3</string>
+</dict>
+</plist>
