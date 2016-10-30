@@ -6,6 +6,7 @@ rule = subrule1 subrule2 subrule3
 ; We can also use optional angle brackets around a rule name.
 <oh-look-ma-angle-brackets> = "[]"; To specify a sequence of characters we use
                                   ; double quotes.
+rule = <angle-brackets>
 
 ; We can also specify characters directly using their ASCII/Unicode value.
 CR = %d13

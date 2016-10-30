@@ -435,10 +435,6 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#rule-name-angle-brackets</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#rule-name</string>
 						</dict>
 					</array>
@@ -486,22 +482,17 @@
 		</dict>
 		<key>rule-name</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>invalid</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>invalid.illegal.character.abnf</string>
+					<key>include</key>
+					<string>#rule-name-angle-brackets</string>
 				</dict>
-			</dict>
-			<key>comment</key>
-			<string>The name of a rule is a sequence of characters, beginning 
-                 with an alphabetic character, and followed by a combination of 
-                 alphabetic characters, digits, and hyphens (dashes)</string>
-			<key>match</key>
-			<string>[a-zA-Z][a-zA-Z0-9\-]*|(?&lt;invalid&gt;\S)</string>
-			<key>name</key>
-			<string>variable.other.rule.abnf</string>
+				<dict>
+					<key>include</key>
+					<string>#rule-name-plain</string>
+				</dict>
+			</array>
 		</dict>
 		<key>rule-name-angle-brackets</key>
 		<dict>
@@ -541,6 +532,25 @@
 					<string>#rule-name</string>
 				</dict>
 			</array>
+		</dict>
+		<key>rule-name-plain</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>invalid</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.character.abnf</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>The name of a rule is a sequence of characters, beginning 
+                 with an alphabetic character, and followed by a combination of 
+                 alphabetic characters, digits, and hyphens (dashes)</string>
+			<key>match</key>
+			<string>[a-zA-Z][a-zA-Z0-9\-]*|(?&lt;invalid&gt;\S)</string>
+			<key>name</key>
+			<string>variable.other.rule.abnf</string>
 		</dict>
 		<key>rule-optional</key>
 		<dict>
