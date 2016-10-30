@@ -8,6 +8,13 @@ rule = subrule1 subrule2 subrule3
                                   ; double quotes.
 rule = <angle-brackets>
 
+; By default characters between double quotes are case-insensitive. This means
+; "abc", "ABC" and "abc" describe the same sequence of characters. To
+; explicitly specify a case-sensitive string use the prefix `%s`.
+case-sensitive        = %s"Case Sensitive"
+case-insensitive      = %i"Case Insensitive"
+also-case-insensitive =   "case insensitive"
+
 ; We can also specify characters directly using their ASCII/Unicode value.
 CR = %d13
 CR = %x0D
