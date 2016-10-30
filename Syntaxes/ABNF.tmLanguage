@@ -130,8 +130,8 @@
                 # Optional 
                 #   - dash followed by last number of range, or
                 #   - sequence of additional numbers separated by dot
-                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
-                   (?&lt;numbers-concat&gt;\S+))?</string>
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
+                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.binary.abnf</string>
 		</dict>
@@ -178,8 +178,8 @@
 			<key>match</key>
 			<string>(?x)%d
                 (?&lt;number&gt;[^\s.-]+)
-                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
-                   (?&lt;numbers-concat&gt;\S+))?</string>
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
+                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.decimal.abnf</string>
 		</dict>
@@ -226,8 +226,8 @@
 			<key>match</key>
 			<string>(?x)%x
                 (?&lt;number&gt;[^\s.-]+)
-                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\S+)) |
-                   (?&lt;numbers-concat&gt;\S+))?</string>
+                (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
+                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
 		</dict>

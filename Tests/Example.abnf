@@ -51,7 +51,7 @@ grouped = (         Turbo         /
 ; - <number> specifies the exact number of repetitions
 ;
 ; required.
-year = 12(month)
+year = 12(month) / *(%x00-0B)
 month = 28*31days / 2419200*2678400second / 1month
 zero-or-one-day = *1day
 
