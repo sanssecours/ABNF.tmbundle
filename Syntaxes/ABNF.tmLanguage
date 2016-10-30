@@ -429,6 +429,8 @@
 			<dict>
 				<key>name</key>
 				<dict>
+					<key>name</key>
+					<string>entity.name.function.abnf</string>
 					<key>patterns</key>
 					<array>
 						<dict>
