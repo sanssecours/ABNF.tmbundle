@@ -550,6 +550,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#variable-repetition</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#operator</string>
 				</dict>
 				<dict>
@@ -578,6 +582,29 @@
 			<string>"</string>
 			<key>name</key>
 			<string>string.quoted.double.abnf</string>
+		</dict>
+		<key>variable-repetition</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>max</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.decimal.$max.abnf</string>
+				</dict>
+				<key>min</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.decimal.$min.abnf</string>
+				</dict>
+				<key>repetition</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.repetition.abnf</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;min&gt;\d+)?(?&lt;repetition&gt;\*)?(?&lt;max&gt;\d+)(?=[a-zA-Z("])</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
