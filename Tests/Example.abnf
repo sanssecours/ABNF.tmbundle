@@ -1,31 +1,33 @@
 ; Comments start with a single semicolon
 
-; An ABNF rule can contain multiple sub-rules
+; An ABNF rule can contain multiple sub-rules.
 rule = subrule1 subrule2 subrule3
 
-; We can also use optional angle brackets around a rule name
-<oh-look-ma-angle-brackets> = "[]"; We can use double quotes to specify a
-                                  ; sequence of characters
+; We can also use optional angle brackets around a rule name.
+<oh-look-ma-angle-brackets> = "[]"; To specify a sequence of characters we use
+                                  ; double quotes.
 
-; We can specify character directly by using their ASCII/Unicode value
+; We can also specify characters directly using their ASCII/Unicode value.
 CR = %d13
 CR = %x0D
 space = %b100000
 
-; We can combine characters using the concatenation operator `.`
+; We can combine characters using the concatenation operator `.`.
 ABNF = %d65.66.78.70
-ABNF = %d65 %d66 %d78 %d70 ; equal to the rule above
+; This rule describes the exact same sequence of the characters as the rule
+; above.
+ABNF = %d65 %d66 %d78 %d70
 hex = %xa.b
 binary = %b100000.10
 
-; We separate alternatives by a forward slash
+; We separate alternatives by a forward slash.
 rule = alternative1 / alternative2 / "Alternative"
 
-; We specify incremental alternative via `=/`
+; We specify incremental alternative via `=/`.
 rule = alternative1
 rule =/ alternative2 / "Alternative"
 
-; We can specify a range of values using a dash sign
+; We can specify a range of values using a dash sign.
 binary-range  = %b00-11
 decimal-range = %d30-39
 hex-range     = %x30-af
