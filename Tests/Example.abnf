@@ -1,7 +1,7 @@
 ; In ABNF comments start with a single semicolon.
 
 ; An ABNF rule can contain multiple sub-rules.
-rule = subrule1 subrule2 subrule3
+rule = WSP subrule2 DIGIT
 
 ; We can also use optional angle brackets around a rule name.
 <oh-look-ma-angle-brackets> = "[]"; To specify a sequence of characters we use
