@@ -26,10 +26,10 @@
 		<key>comment</key>
 		<dict>
 			<key>begin</key>
-			<string>(?:(?&lt;leading-whitespace&gt;^[ \t]*)|[ \t]*)(?=;\p{Print}*$)</string>
+			<string>(?:(?&lt;whitespace&gt;^[ \t]*)|[ \t]*)(?=;[[:print:]]*$)</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>leading-whitespace</key>
+				<key>whitespace</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.whitespace.comment.leading.abnf</string>
@@ -112,7 +112,7 @@
 						</dict>
 					</array>
 				</dict>
-				<key>numbers-concat</key>
+				<key>numbers</key>
 				<dict>
 					<key>patterns</key>
 					<array>
@@ -131,7 +131,7 @@
                 #   - dash followed by last number of range, or
                 #   - sequence of additional numbers separated by dot
                 (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
-                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
+                   (?&lt;numbers&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.binary.abnf</string>
 		</dict>
@@ -164,7 +164,7 @@
 						</dict>
 					</array>
 				</dict>
-				<key>numbers-concat</key>
+				<key>numbers</key>
 				<dict>
 					<key>patterns</key>
 					<array>
@@ -179,7 +179,7 @@
 			<string>(?x)%d
                 (?&lt;number&gt;[^\s.-]+)
                 (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
-                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
+                   (?&lt;numbers&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.decimal.abnf</string>
 		</dict>
@@ -212,7 +212,7 @@
 						</dict>
 					</array>
 				</dict>
-				<key>numbers-concat</key>
+				<key>numbers</key>
 				<dict>
 					<key>patterns</key>
 					<array>
@@ -227,7 +227,7 @@
 			<string>(?x)%x
                 (?&lt;number&gt;[^\s.-]+)
                 (?:(?:(?=-)(?&lt;dash&gt;-)(?&lt;last&gt;\w+)) |
-                   (?&lt;numbers-concat&gt;[\w.]+))?</string>
+                   (?&lt;numbers&gt;[\w.]+))?</string>
 			<key>name</key>
 			<string>constant.numeric.hex.abnf</string>
 		</dict>
@@ -307,7 +307,7 @@
 		<key>digit-hex-valid</key>
 		<dict>
 			<key>match</key>
-			<string>\h</string>
+			<string>[0-9A-Fa-f]</string>
 		</dict>
 		<key>digits-binary-concatenation</key>
 		<dict>
